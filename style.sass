@@ -45,7 +45,7 @@ a, a:visited
   color: $red
 
   // text-transform: uppercase
-  -webkit-transition: opacity 0.6s
+  -webkit-transition: opacity 0.4s
   // -webkit-animation: colorchange 4s infinite
   i
     display: inline-block
@@ -69,7 +69,7 @@ a, a:visited
   text-align: center
   line-height: 190px
   opacity: 0
-  -webkit-transition: opacity 0.6s
+  -webkit-transition: opacity 0.4s
   &::after, &::before
     content: " "
     position: absolute
@@ -79,12 +79,20 @@ a, a:visited
     border: 10px solid transparent
     left: 50%
     margin: -10px
+    -webkit-transition: all 0.6s
   &::after
-    border-bottom: 50px solid $red
-    top: 15px
+    border-bottom: 20px solid $red
+    top: 45px
   &::before
-    border-top: 50px solid $green
-    bottom: 15px
+    border-top: 20px solid $green
+    bottom: 45px
   .flat-down &
     opacity: 1
+    &::after
+      border-bottom: 50px solid $red
+      top: 15px
+    &::before
+      border-top: 50px solid $green
+      bottom: 15px
+
 
