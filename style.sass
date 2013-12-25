@@ -13,8 +13,9 @@ html
 body
   color: green
   border-color: blue
-  background: white //#EDF8F7
-  // -webkit-animation: bgchange 4s infinite
+  background: white
+  border: 2px dotted red
+  -webkit-animation: colorchange 2s infinite
 
 body, html
   overflow: hidden
@@ -23,11 +24,15 @@ body, html
 
 @-webkit-keyframes colorchange
   0%
-    color: green
+    border-color: green
+  25%
+    border-color: white
   50%
-    color: red
+    border-color: red
+  75%
+    border-color: white
   100%
-    color: green
+    border-color: green
 
 @-webkit-keyframes bgchange
   0%
