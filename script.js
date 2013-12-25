@@ -4,7 +4,7 @@ var tilt = -3,
 
 var grav = 0;
 
-var compass_avg = [0,0,0,0,0,0,0,0];
+var compass_avg = [0,0,0,0,0];
 var tilt_avg = [0,0,0,0,0];
 
 var $msg, $sig, $bod, $surp;
@@ -19,7 +19,7 @@ function tilt_detect(event) {
   var deg = normalize_degrees(event.alpha);
 
   if ( Math.abs(deg - compass_avg[0]) > 180 ) {
-    compass_avg = [deg, deg, deg, deg, deg, deg, deg, deg];
+    compass_avg = [deg,deg,deg,deg, deg];
   }
   else {
     compass_avg.pop();
