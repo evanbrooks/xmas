@@ -30,10 +30,10 @@ function tilt_detect(event) {
 
 function move_message() {
   if (isNaN(compass)) compass = 300;
-  // $msg.css({
-  //   "-webkit-transform":
-  //     /*"rotate(" + -roll + "deg)*/ "translate3d(" + msg_progress(compass) +  "px, " + (0.01 * (tilt - 90)) + "%, 0)"
-  // });
+  $msg.css({
+    "-webkit-transform":
+      /*"rotate(" + -roll + "deg)*/ "translate3d(" + msg_progress(compass) +  "px, " + (0.01 * (tilt - 90)) + "%, 0)"
+  });
 }
 
 function normalize_degrees(degrees) {
