@@ -10,21 +10,20 @@
 html
   font: 24px/1.25 "Montserrat", sans-serif
 
+$green: rgb(104, 151, 104)
+$red: rgb(214, 100, 100)
+
 body
   color: green
   border-color: blue
   background: white
-  border: 2px dotted red
+  border: 5px solid $red
   -webkit-animation: colorchange 2s infinite
 
 body, html
   overflow: hidden
   width: 100%
   height: 100%
-
-
-$green: rgb(104, 151, 104)
-$red: rgb(214, 100, 100)
 
 a, a:visited
   color: inherit
@@ -52,11 +51,11 @@ a, a:visited
   i:nth-child(odd)
     color: $green
   
-  .flat-down &
+  .flat-down &, .look-up &
     opacity: 0.2
 
 
-#signature
+#signature, #surprise
   position: fixed
   height: 200px
   width: 200px
@@ -64,12 +63,15 @@ a, a:visited
   left: 50%
   margin: -100px
   border-radius: 50%
+  opacity: 0
+  -webkit-transition: opacity 0.4s
+
+
+#signature
   border: 5px solid $green
   color: $red
   text-align: center
   line-height: 190px
-  opacity: 0
-  -webkit-transition: opacity 0.4s
   &::after, &::before
     content: " "
     position: absolute
@@ -95,4 +97,7 @@ a, a:visited
       border-top: 50px solid $green
       bottom: 15px
 
+#surprise
+  img
+    width: 100%
 

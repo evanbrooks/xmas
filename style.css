@@ -14,7 +14,7 @@ body {
   color: green;
   border-color: blue;
   background: white;
-  border: 2px dotted red;
+  border: 5px solid #d66464;
   -webkit-animation: colorchange 2s infinite; }
 
 body, html {
@@ -44,10 +44,10 @@ a, a:visited {
     display: inline-block; }
   #message i:nth-child(odd) {
     color: #689768; }
-  .flat-down #message {
+  .flat-down #message, .look-up #message {
     opacity: 0.2; }
 
-#signature {
+#signature, #surprise {
   position: fixed;
   height: 200px;
   width: 200px;
@@ -55,12 +55,14 @@ a, a:visited {
   left: 50%;
   margin: -100px;
   border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s; }
+
+#signature {
   border: 5px solid #689768;
   color: #d66464;
   text-align: center;
-  line-height: 190px;
-  opacity: 0;
-  -webkit-transition: opacity 0.4s; }
+  line-height: 190px; }
   #signature::after, #signature::before {
     content: " ";
     position: absolute;
@@ -85,3 +87,6 @@ a, a:visited {
     .flat-down #signature::before {
       border-top: 50px solid #689768;
       bottom: 15px; }
+
+#surprise img {
+  width: 100%; }

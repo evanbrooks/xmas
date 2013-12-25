@@ -27,7 +27,7 @@ function tilt_detect(event) {
 
   roll    = parseInt( event.gamma * 1 ) / 1;
 
-  if (tilt < 45) {
+  if (tilt > 0 && tilt < 45) {
     $bod.addClass("flat-down");
   }
   else {
