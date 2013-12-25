@@ -5,7 +5,7 @@ var tilt = -3,
 var compass_avg = [0,0,0,0,0];
 var tilt_avg = [0,0,0,0,0];
 
-var $msg, $sig;
+var $msg, $sig, $bod;
 var msg_width = 0;
 
 function tilt_detect(event) {
@@ -26,6 +26,13 @@ function tilt_detect(event) {
   tilt = tilt_avg.reduce(function(a, b) {return a + b;}) / tilt_avg.length;
 
   roll    = parseInt( event.gamma * 1 ) / 1;
+
+  if (tilt < 45) {
+    $bod.addClass("flat-down");
+  }
+  else {
+    $bod.removeClass("flat-down");
+  }
 }
 
 function move_message() {
@@ -58,6 +65,7 @@ function msg_progress(degrees) {
 
 
 $(function(){
+  $bod = $("body");
   $msg = $("#message");
   $sig = $("#signature");
   msg_width = $msg.width() + $("body").width();
