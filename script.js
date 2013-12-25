@@ -8,6 +8,10 @@ var tilt_avg = [0,0,0,0,0];
 var $msg, $sig, $bod, $surp;
 var msg_width = 0;
 
+function motion_detect(event) {
+  console.log(event.acceleration);
+}
+
 function tilt_detect(event) {
 
   var deg = normalize_degrees(event.alpha);
@@ -25,16 +29,24 @@ function tilt_detect(event) {
   tilt_avg.unshift(event.beta);
   tilt = tilt_avg.reduce(function(a, b) {return a + b;}) / tilt_avg.length;
 
-  roll    = parseInt( event.gamma * 1 ) / 1;
+  roll = parseInt( event.gamma * 1 ) / 1;
 
 
-  console.log(tilt);
-  if (tilt > 0 && tilt < 45) {
+  //console.log(tilt);
+  if (tilt > 0 && tilt < 25) {
     $bod.addClass("flat-down");
   }
   else {
     $bod.removeClass("flat-down");
   }
+
+  if (tilt > 0 && tilt < 25) {
+    $bod.addClass("flat-down");
+  }
+  else {
+    $bod.removeClass("flat-down");
+  }
+
 }
 
 function move_message() {
@@ -77,6 +89,7 @@ $(function(){
   $surp = $("#surprise");
   msg_width = $msg.width() + $("body").width();
   window.addEventListener("deviceorientation", tilt_detect, true);
+  window.addEventListener("devicemotion", motion_detect, true);
 
   (function step(){
     requestAnimationFrame(step);
