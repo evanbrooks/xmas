@@ -13,7 +13,8 @@ html {
 body {
   color: green;
   border-color: blue;
-  background: white; }
+  background: white;
+  -webkit-animation: bgchange 4s infinite; }
 
 body, html {
   overflow: hidden;
@@ -30,6 +31,16 @@ body, html {
   100% {
     color: green; } }
 
+@-webkit-keyframes bgchange {
+  0% {
+    background: green; }
+
+  50% {
+    background: red; }
+
+  100% {
+    background: green; } }
+
 a, a:visited {
   color: inherit;
   text-decoration: none;
@@ -45,4 +56,4 @@ a, a:visited {
   font-weight: bold;
   position: relative;
   display: inline-block;
-  -webkit-animation: colorchange 4s infinite; }
+  color: white; }
