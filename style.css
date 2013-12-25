@@ -44,4 +44,5 @@ a, a:visited {
   white-space: nowrap;
   font-weight: bold;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: all 0.1s; }

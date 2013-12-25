@@ -6,7 +6,7 @@ var $msg;
 var msg_width = 0;
 
 function tilt_detect(event) {
-  compass = event.alpha;
+  compass = parseInt( event.alpha * 1 ) / 1;
   tilt    = parseInt( event.beta  * 1 ) / 1;
   roll    = parseInt( event.gamma * 1 ) / 1;
 }
