@@ -9,7 +9,7 @@ var $msg, $sig, $bod, $surp;
 var msg_width = 0;
 
 function motion_detect(event) {
-  console.log(event.acceleration);
+  console.log(event.acceleration.z);
 }
 
 function tilt_detect(event) {
