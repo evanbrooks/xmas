@@ -14,7 +14,7 @@ body {
   color: green;
   border-color: blue;
   background: white;
-  border: 12px solid #d66464;
+  border: 8px solid #d66464;
   -webkit-animation: colorchange 2s infinite; }
 
 body, html {
