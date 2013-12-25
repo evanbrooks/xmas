@@ -2,8 +2,8 @@ var tilt = -3,
     roll = 0,
     compass = 0;
 
-var compass_avg = [0,0,0,0,0,0,0];
-var tilt_avg = [0,0,0,0,0,0,0];
+var compass_avg = [0,0,0,0,0];
+var tilt_avg = [0,0,0,0,0];
 
 var $msg;
 var msg_width = 0;
