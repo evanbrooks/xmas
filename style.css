@@ -13,8 +13,7 @@ html {
 body {
   color: green;
   border-color: blue;
-  background: white;
-  -webkit-animation: bgchange 4s infinite; }
+  background: white; }
 
 body, html {
   overflow: hidden;
@@ -56,4 +55,4 @@ a, a:visited {
   font-weight: bold;
   position: relative;
   display: inline-block;
-  color: white; }
+  color: red; }

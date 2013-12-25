@@ -47,7 +47,7 @@ function msg_progress(degrees) {
 
 $(function(){
   $msg = $("#message");
-  msg_width = $msg.width();
+  msg_width = $msg.width() + $("body").width();
   window.addEventListener("deviceorientation", tilt_detect, true);
 
   (function step(){
