@@ -62,8 +62,9 @@ a, a:visited {
   white-space: nowrap;
   font-weight: bold;
   position: relative;
-  display: inline-block; }
-  #message i {
+  display: inline-block;
+  text-transform: uppercase; }
+  #message i:nth-child(odd) {
     color: green; }
 
 .xmas {
