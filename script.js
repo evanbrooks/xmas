@@ -14,7 +14,7 @@ function move_message() {
   if (isNaN(compass)) compass = 0;
   $msg.css({
     "-webkit-transform":
-      "rotate(" + -roll + "deg) translate3d(" + compass +  "%, " + tilt + "%, 0)"
+      "rotate(" + -roll + "deg) translate3d(" + compass +  "%, " + (tilt - 80) + "%, 0)"
   });
 }
 
