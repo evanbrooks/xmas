@@ -43,6 +43,4 @@ a, a:visited {
   font-size: 80vh;
   white-space: nowrap;
   font-weight: bold;
-  position: relative;
-  -webkit-transition: all 0.1s;
-  -webkit-animation: colorchange 4s infinite; }
+  position: relative; }
