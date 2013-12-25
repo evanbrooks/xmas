@@ -69,10 +69,10 @@ a, a:visited {
   #message i.space {
     margin-right: 1ch; }
   #message i:nth-child(odd) {
-    color: green; }
+    color: #689768; }
 
 .xmas {
-  color: red; }
+  color: #d66464; }
 
 .solstice {
   color: green; }
