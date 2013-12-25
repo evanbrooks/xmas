@@ -11,9 +11,10 @@ function tilt_detect(event) {
 }
 
 function move_message() {
+  if (isNaN(compass)) compass = 0;
   $msg.css({
     "-webkit-transform":
-      "rotate(" + -roll + "deg) translate3d(" + 0 +  "%, " + tilt + "%, 0)"
+      "rotate(" + -roll + "deg) translate3d(" + compass +  "%, " + tilt + "%, 0)"
   });
 }
 
