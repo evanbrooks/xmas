@@ -14,7 +14,7 @@ body {
   color: green;
   border-color: blue;
   background: white;
-  border: 5px solid #d66464;
+  border: 12px solid #d66464;
   -webkit-animation: colorchange 2s infinite; }
 
 body, html {
@@ -45,7 +45,7 @@ a, a:visited {
   #message i:nth-child(odd) {
     color: #689768; }
   .flat-down #message, .look-up #message {
-    opacity: 0.2; }
+    opacity: 0; }
 
 #signature, #surprise {
   position: fixed;

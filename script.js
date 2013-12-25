@@ -5,7 +5,7 @@ var tilt = -3,
 var compass_avg = [0,0,0,0,0];
 var tilt_avg = [0,0,0,0,0];
 
-var $msg, $sig, $bod;
+var $msg, $sig, $bod, $surp;
 var msg_width = 0;
 
 function tilt_detect(event) {
@@ -27,6 +27,8 @@ function tilt_detect(event) {
 
   roll    = parseInt( event.gamma * 1 ) / 1;
 
+
+  console.log(tilt);
   if (tilt > 0 && tilt < 45) {
     $bod.addClass("flat-down");
   }
@@ -42,6 +44,10 @@ function move_message() {
       "translate3d(" + msg_progress(compass) +  "px, " + (0.01 * (tilt - 90)) + "%, 0)"
   });
   $sig.css({
+    "-webkit-transform":
+      "rotate(" + compass + "deg)"
+  });
+  $surp.css({
     "-webkit-transform":
       "rotate(" + compass + "deg)"
   });
@@ -68,6 +74,7 @@ $(function(){
   $bod = $("body");
   $msg = $("#message");
   $sig = $("#signature");
+  $surp = $("#surprise");
   msg_width = $msg.width() + $("body").width();
   window.addEventListener("deviceorientation", tilt_detect, true);
 
