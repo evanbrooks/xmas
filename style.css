@@ -45,7 +45,7 @@ a, a:visited {
   #message i:nth-child(odd) {
     color: #689768; }
   .flat-down #message {
-    opacity: 0.3; }
+    opacity: 0.2; }
 
 #signature {
   position: fixed;
@@ -72,11 +72,11 @@ a, a:visited {
     margin: -10px;
     -webkit-transition: all 0.6s; }
   #signature::after {
-    border-bottom: 20px solid #d66464;
-    top: 45px; }
+    border-bottom: 10px solid #d66464;
+    top: 55px; }
   #signature::before {
-    border-top: 20px solid #689768;
-    bottom: 45px; }
+    border-top: 10px solid #689768;
+    bottom: 55px; }
   .flat-down #signature {
     opacity: 1; }
     .flat-down #signature::after {
