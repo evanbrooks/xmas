@@ -1,9 +1,9 @@
 $(function(){
-  var text = "this certificate entitles the holder to one copy of Writer.Pro from the Mac App Store";
+  var text = "this  message  entitles  you  to  one  copy  of  <a href='http://writer.pro'>Writer Pro</a>  from  the  Mac  App  Store  for  use  in  college  and  your  writing  career";
   var $msg = $("#message");
 
   (function randomize_text(){
-    var words = text.split(" ");
+    var words = text.split("  ");
     var shuffled_words = shuffle(words);
     var first_word = shuffled_words[0];
     shuffled_words[0] = first_word.charAt(0).toUpperCase() + first_word.slice(1);
@@ -27,7 +27,7 @@ $(function(){
         setTimeout(type,delay);
       }
       else {
-        setTimeout(erase, 1000);
+        setTimeout(erase, 1500);
       }
     }
 
