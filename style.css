@@ -54,5 +54,15 @@ a, a:visited {
   white-space: nowrap;
   font-weight: bold;
   position: relative;
-  display: inline-block;
+  display: inline-block; }
+  #message span {
+    margin-left: 1ch; }
+
+.xmas {
   color: red; }
+
+.solstice {
+  color: green; }
+
+.chanukah {
+  color: blue; }
