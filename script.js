@@ -2,6 +2,8 @@ var tilt = -3,
     roll = 0,
     compass = 0;
 
+var grav = 0;
+
 var compass_avg = [0,0,0,0,0];
 var tilt_avg = [0,0,0,0,0];
 
@@ -9,7 +11,7 @@ var $msg, $sig, $bod, $surp;
 var msg_width = 0;
 
 function motion_detect(event) {
-  console.log(event.accelerationIncludingGravity.z);
+  grav = event.accelerationIncludingGravity.z;
 }
 
 function tilt_detect(event) {
@@ -33,18 +35,12 @@ function tilt_detect(event) {
 
 
   //console.log(tilt);
-  if (tilt > 0 && tilt < 25) {
-    $bod.addClass("flat-down");
+  if (tilt < 25) {
+    if (grav < 0) $bod.addClass("flat-down");
+    if (grav < 0) $bod.addClass("look-up");
   }
   else {
-    $bod.removeClass("flat-down");
-  }
-
-  if (tilt > 0 && tilt < 25) {
-    $bod.addClass("flat-down");
-  }
-  else {
-    $bod.removeClass("flat-down");
+    $bod.removeClass("flat-down look-up");
   }
 
 }
