@@ -2,11 +2,17 @@ var tilt = -3,
     roll = 0,
     compass = 0;
 
+var compass_avg = [0,0,0,0,0,0,0,0,0,0];
+
 var $msg;
 var msg_width = 0;
 
 function tilt_detect(event) {
-  compass = parseInt( event.alpha * 1 ) / 1;
+
+  compass_avg.pop();
+  compass_avg.unshift(parseInt( event.alpha * 1 ) / 1);
+  compass = compass_avg.reduce(function(a, b) {return a + b;}) / compass_avg.length;
+  
   tilt    = parseInt( event.beta  * 1 ) / 1;
   roll    = parseInt( event.gamma * 1 ) / 1;
 }
