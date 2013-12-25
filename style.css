@@ -63,8 +63,8 @@ a, a:visited {
   font-weight: bold;
   position: relative;
   display: inline-block; }
-  #message span {
-    margin-left: 1ch; }
+  #message i {
+    color: green; }
 
 .xmas {
   color: red; }
