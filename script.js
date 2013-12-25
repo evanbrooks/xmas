@@ -27,8 +27,10 @@ function msg_progress(degrees) {
     return msg_progress(degrees - 360)
   }
   else {
-    console.log(degrees);
-    return -1 * (degrees / 360) * msg_width;
+    console.log("deg: " + degrees);
+    var progress = -1 * (degrees / 360) * msg_width;
+    console.log(" __________________________prog: "+ progress);
+    return progress;
   }
 }
 
