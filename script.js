@@ -37,7 +37,7 @@ function tilt_detect(event) {
   //console.log(tilt);
   if (tilt < 25) {
     if (grav < 0) $bod.addClass("flat-down");
-    if (grav < 0) $bod.addClass("look-up");
+    if (grav > 0) $bod.addClass("look-up");
   }
   else {
     $bod.removeClass("flat-down look-up");
