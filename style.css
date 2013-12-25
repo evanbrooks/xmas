@@ -43,4 +43,5 @@ a, a:visited {
   font-size: 80vh;
   white-space: nowrap;
   font-weight: bold;
-  position: relative; }
+  position: relative;
+  display: inline-block; }
