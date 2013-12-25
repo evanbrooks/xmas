@@ -10,8 +10,15 @@ var msg_width = 0;
 
 function tilt_detect(event) {
 
-  compass_avg.pop();
-  compass_avg.unshift(event.alpha);
+  var deg = normalize_degrees(event.alpha);
+
+  if ( Math.abs(deg - compass_avg[0]) > 180 ) {
+    compass_avg = [deg,deg,deg,deg, deg];
+  }
+  else {
+    compass_avg.pop();
+    compass_avg.unshift(event.alpha);
+  }
   compass = compass_avg.reduce(function(a, b) {return a + b;}) / compass_avg.length;
 
   tilt_avg.pop();
@@ -29,19 +36,19 @@ function move_message() {
   });
 }
 
-function msg_progress(degrees) {
+function normalize_degrees(degrees) {
   if (degrees < 0) {
-    return msg_progress(degrees + 360)
+    return normalize_degrees(degrees + 360)
   }
   else if (degrees > 360) {
-    return msg_progress(degrees - 360)
+    return normalize_degrees(degrees - 360)
   }
-  else {
-    console.log("deg: " + degrees);
-    var progress = -msg_width + ((degrees / 360) * msg_width);
-    console.log(" __________________________prog: "+ progress);
-    return progress;
-  }
+  else return degrees;
+}
+
+function msg_progress(degrees) {
+  var progress = -msg_width + ((degrees / 360) * msg_width);
+  return progress;
 }
 
 
