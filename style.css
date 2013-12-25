@@ -22,32 +22,6 @@ body, html {
   width: 100%;
   height: 100%; }
 
-@-webkit-keyframes colorchange {
-  0% {
-    border-color: green; }
-
-  25% {
-    border-color: white; }
-
-  50% {
-    border-color: red; }
-
-  75% {
-    border-color: white; }
-
-  100% {
-    border-color: green; } }
-
-@-webkit-keyframes bgchange {
-  0% {
-    background: green; }
-
-  50% {
-    background: red; }
-
-  100% {
-    background: green; } }
-
 a, a:visited {
   color: inherit;
   text-decoration: none;
@@ -69,11 +43,33 @@ a, a:visited {
   #message i:nth-child(odd) {
     color: #689768; }
 
+#signature {
+  position: fixed;
+  height: 200px;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px;
+  border-radius: 50%;
+  border: 5px solid #689768;
+  color: #d66464;
+  text-align: center;
+  line-height: 190px; }
+  #signature::after, #signature::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    left: 50%;
+    margin: -10px; }
+  #signature::after {
+    border-bottom: 50px solid #d66464;
+    top: 15px; }
+  #signature::before {
+    border-top: 50px solid #689768;
+    bottom: 15px; }
+
 .xmas {
   color: #d66464; }
-
-.solstice {
-  color: green; }
-
-.chanukah {
-  color: blue; }

@@ -5,7 +5,7 @@ var tilt = -3,
 var compass_avg = [0,0,0,0,0];
 var tilt_avg = [0,0,0,0,0];
 
-var $msg;
+var $msg, $sig;
 var msg_width = 0;
 
 function tilt_detect(event) {
@@ -32,8 +32,13 @@ function move_message() {
   if (isNaN(compass)) compass = 300;
   $msg.css({
     "-webkit-transform":
-      /*"rotate(" + -roll + "deg)*/ "translate3d(" + msg_progress(compass) +  "px, " + (0.01 * (tilt - 90)) + "%, 0)"
+      "translate3d(" + msg_progress(compass) +  "px, " + (0.01 * (tilt - 90)) + "%, 0)"
   });
+  $sig.css({
+    "-webkit-transform":
+      "rotate(" + compass + "deg)"
+  });
+
 }
 
 function normalize_degrees(degrees) {
@@ -54,6 +59,7 @@ function msg_progress(degrees) {
 
 $(function(){
   $msg = $("#message");
+  $sig = $("#signature");
   msg_width = $msg.width() + $("body").width();
   window.addEventListener("deviceorientation", tilt_detect, true);
 
