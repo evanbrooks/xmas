@@ -40,9 +40,9 @@ a, a:visited {
     background: white; }
 
 #message {
-  font-size: 80vh;
+  font-size: 100vh;
   white-space: nowrap;
   font-weight: bold;
   position: relative;
   display: inline-block;
-  -webkit-transition: all 0.1s; }
+  -webkit-animation: colorchange 4s infinite; }
