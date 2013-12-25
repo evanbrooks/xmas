@@ -63,7 +63,7 @@ a, a:visited {
   font-weight: bold;
   position: relative;
   display: inline-block;
-  padding-left: 1vw;
+  padding-left: 100vw;
   text-transform: uppercase; }
   #message i:nth-child(odd) {
     color: green; }
