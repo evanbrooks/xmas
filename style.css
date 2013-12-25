@@ -64,6 +64,10 @@ a, a:visited {
   position: relative;
   display: inline-block;
   padding-left: 100vw; }
+  #message i {
+    display: inline-block; }
+  #message i.space {
+    margin-right: 1ch; }
   #message i:nth-child(odd) {
     color: green; }
 
